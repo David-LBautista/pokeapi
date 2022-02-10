@@ -1,0 +1,68 @@
+<div class="row detail">
+  <div class="col-md-4">
+    <img class="pokemon-img" src="{{ pokemonImg }}" alt="" />
+  </div>
+
+  <div class="col-md-8">
+    <div class="flex">
+      <h2 class="pokemon-name text-center">
+        {{ pokemon.name | uppercase }}
+      </h2>
+      <button mat-raised-button color="primary" (click)="goToFullList()">
+        GO TO FULL LIST
+      </button>
+    </div>
+    <div class="mt-4">
+      <h5 class="card-title index text-center">No. {{ pokemon.id }}</h5>
+      <h5 class="card-title index text-center">Weight: {{ pokemon.weight }}</h5>
+    </div>
+
+    <hr />
+    <div class="types">
+      <p class="type-title">Types:</p>
+      <mat-chip-list>
+        <mat-chip *ngFor="let type of getTypes" color="accent">
+          {{ type.type.name }}</mat-chip
+        >
+      </mat-chip-list>
+    </div>
+    <hr />
+    <div class="types">
+      <p class="type-title">Stats:</p>
+      <mat-chip-list>
+        <mat-chip *ngFor="let stat of getStats" color="accent">
+          {{ stat.stat.name }}: {{ stat.base_stat }}</mat-chip
+        >
+      </mat-chip-list>
+    </div>
+    <hr />
+    <div class="types">
+      <p class="type-title">Abilities:</p>
+      <mat-chip-list>
+        <mat-chip
+          *ngFor="let ability of getAbilities"
+          color="accent"
+          color="warn"
+        >
+          {{ ability.ability.name }}</mat-chip
+        >
+      </mat-chip-list>
+    </div>
+    <hr />
+    <div class="actions">
+      <button
+        class="capture"
+        mat-raised-button
+        color="warn"
+        (click)="capturePokemon()"
+      >
+        CAPTURE!
+      </button>
+      <button mat-raised-button color="primary" (click)="goToPokedex()">
+        MIS POKEMONS
+      </button>
+    </div>
+  </div>
+</div>
+
+<app-spinner [pokemon]="pokemon" *ngIf="isCapturingPokemon"></app-spinner>

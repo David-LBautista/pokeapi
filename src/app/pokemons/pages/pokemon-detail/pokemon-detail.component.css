@@ -1,0 +1,47 @@
+.detail {
+  display: flex;
+  align-items: center;
+}
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.actions {
+  display: flex;
+  justify-content: end;
+}
+
+.capture {
+  margin-right: 15px;
+}
+
+.pokemon-name {
+  font-size: 54px;
+  font-weight: bold;
+  color: #c2175b;
+}
+.pokemon-img {
+  width: 100%;
+}
+
+.index {
+  font-weight: bold;
+  color: #000;
+}
+
+.types {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+
+.type-title {
+  margin: 0 25px 0 0;
+
+  font-size: 24px;
+  font-weight: bold;
+  color: #000;
+}

@@ -1,0 +1,22 @@
+table {
+  width: 100%;
+}
+
+.mat-form-field {
+  width: 100%;
+
+  padding: 0 15px 0 0;
+  margin-top: 15px;
+
+  font-size: 14px;
+}
+
+::ng-deep .mat-table {
+  background-color: #7e7e7e;
+}
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

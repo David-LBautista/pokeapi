@@ -1,0 +1,10 @@
+
+.small-flag {
+    width: 50px;
+}
+
+.mr-1 {
+    margin-right: 5px;
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
