@@ -72,7 +72,7 @@ export class PokemonTableComponent implements OnInit, AfterViewInit {
   /**
    * @description sorts the table
    */
-  ngAfterViewInit() {
+  ngAfterViewInit(): void {
     this.dataSource.sort = this.sort;
   }
 
@@ -80,7 +80,7 @@ export class PokemonTableComponent implements OnInit, AfterViewInit {
    * @description filters the columns
    * @param event
    */
-  applyFilter(event: Event) {
+  applyFilter(event: Event): void {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
 
@@ -93,7 +93,7 @@ export class PokemonTableComponent implements OnInit, AfterViewInit {
    * @description gets the selected row number
    * @param row
    */
-  public getRow(row: any) {
+  public getRow(row: { position: number }): void {
     this.router.navigateByUrl(`detail/${row.position}`);
   }
 }
