@@ -65,6 +65,7 @@ export class PokemonTableComponent implements OnInit, AfterViewInit {
         this.pokemons.push(pokemonData);
         this.dataSource = new MatTableDataSource(this.pokemons);
         this.dataSource.paginator = this.paginator;
+        this.dataSource.sort = this.sort;
       });
     }
   }
@@ -74,7 +75,6 @@ export class PokemonTableComponent implements OnInit, AfterViewInit {
    */
   ngAfterViewInit(): void {
     this.getPokemons();
-    this.dataSource.sort = this.sort;
   }
 
   /**
