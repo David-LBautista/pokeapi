@@ -19,6 +19,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./pokemon-table.component.css'],
 })
 export class PokemonTableComponent implements OnInit, AfterViewInit {
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
   /**
    * @description looks for the matSort in HTML
    */
@@ -32,7 +33,7 @@ export class PokemonTableComponent implements OnInit, AfterViewInit {
   /**
    * @description array of pokemons
    */
-  private pokemons: any[] = [];
+  public pokemons: any[] = [];
 
   /**
    * @description total of pokemons to bring by the API
@@ -46,9 +47,7 @@ export class PokemonTableComponent implements OnInit, AfterViewInit {
 
   constructor(private pokeService: PokemonService, private router: Router) {}
 
-  ngOnInit(): void {
-    this.getPokemons();
-  }
+  ngOnInit(): void {}
 
   /**
    * @description gets the pokemons by the API
@@ -65,6 +64,7 @@ export class PokemonTableComponent implements OnInit, AfterViewInit {
         };
         this.pokemons.push(pokemonData);
         this.dataSource = new MatTableDataSource(this.pokemons);
+        this.dataSource.paginator = this.paginator;
       });
     }
   }
@@ -73,6 +73,7 @@ export class PokemonTableComponent implements OnInit, AfterViewInit {
    * @description sorts the table
    */
   ngAfterViewInit(): void {
+    this.getPokemons();
     this.dataSource.sort = this.sort;
   }
 

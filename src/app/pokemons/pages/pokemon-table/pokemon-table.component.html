@@ -46,4 +46,10 @@
       (click)="getRow(row)"
     ></tr>
   </table>
+  <mat-paginator
+    [length]="pokemons.length"
+    [pageSizeOptions]="[5, 10, 25, 100]"
+    [pageSize]="50"
+    aria-label="Select page of pokemons"
+  ></mat-paginator>
 </div>
